@@ -15,6 +15,7 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
     <link rel="import" href="bower_components/core-toolbar/core-toolbar.html">
     <link rel="import" href="bower_components/paper-checkbox/paper-checkbox.html" />
     <link rel="import" href="bower_components/paper-button/paper-button.html" />
+    <link rel="import" href="bower_components/paper-dropdown/paper-dropdown.html" />
     <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html" />
     <link rel="import" href="bower_components/paper-item/paper-item.html" />
     <link rel="import" href="bower_components/paper-menu-button/paper-menu-button.html" />
@@ -51,6 +52,9 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
             background-color: #607d8b;
             color: white;
           }
+          paper-menu-button .dropdown {
+            color: #333;
+          }
           .no-button {
             width: 40px;
           }
@@ -71,14 +75,18 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
               <core-toolbar id="my-toolbar">
                 <div class="no-button"></div>
                 <div flex>Social</div>
-                <paper-menu-button icon="more-vert" halign="right">
-                  <paper-item on-tap="{{ refresh }}">Refresh</paper-item>
-                  <paper-item on-tap="{{ goToSettings }}">Settings</paper-item>
-                  <paper-item on-tap="{{ goToPerf }}">Performance</paper-item>
-                  <my-boolean-setting id="alwaysAnimateCheck"
-                      label="Always animate"
-                      on-core-change="{{toggleAlwaysAnimate}}">
-                  </my-boolean-setting>
+                <paper-menu-button>
+                  <paper-icon-button icon="more-vert">
+                  </paper-icon-button>
+                  <paper-dropdown class="dropdown" halign="right">
+                    <paper-item on-tap="{{ refresh }}">Refresh</paper-item>
+                    <paper-item on-tap="{{ goToSettings }}">Settings</paper-item>
+                    <paper-item on-tap="{{ goToPerf }}">Performance</paper-item>
+                    <my-boolean-setting id="alwaysAnimateCheck"
+                        label="Always animate"
+                        on-core-change="{{toggleAlwaysAnimate}}">
+                    </my-boolean-setting>
+                  </paper-dropdown>
                 </paper-menu-button>
               </core-toolbar>
 
