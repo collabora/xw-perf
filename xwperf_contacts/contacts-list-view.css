@@ -49,7 +49,8 @@
   width: 100%;
 }
 
-#searchInput {
+#searchInputDecorator {
+  display: inline-block;
   font-size: 1rem;
   padding: 0;
 }

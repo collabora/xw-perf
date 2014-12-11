@@ -158,7 +158,7 @@ Polymer({
   },
 
   updateSearch: function() {
-    var key = this.$.searchInput.inputValue;
+    var key = this.$.searchInput.value;
     if (this.searching && key) {
       var filteredData = [];
       var filteredFavorites = [];
