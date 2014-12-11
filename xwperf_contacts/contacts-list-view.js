@@ -209,6 +209,15 @@ Polymer({
     if (this.filteredFavorites !== this.favorites)
       this.updateSearch();
   },
+
+  preparePages: function (e) {
+    this.async(function () {
+      // If we do this synchronously it seems to do relayout, which resets
+      // the transform property and breaks our animations.
+      this.$.allList.updateSize();
+      this.$.favoritesList.updateSize();
+    }.bind(this));
+  },
 });
 
 })();
