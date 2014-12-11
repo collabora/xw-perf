@@ -5,7 +5,7 @@ Copyright 2014 Intel Corporation. All rights reserved.
 License: BSD-3-clause-Intel, see LICENSE.txt
 -->
 <link rel="import" href="../paper-button/paper-button.html" />
-<link rel="import" href="../paper-dialog/paper-dialog.html" />
+<link rel="import" href="../paper-dialog/paper-action-dialog.html" />
 <link rel="import" href="../paper-dialog/paper-dialog-transition.html" />
 <link rel="import" href="../paper-item/paper-item.html" />
 <link rel="import" href="../paper-radio-button/paper-radio-button.html" />
@@ -14,9 +14,6 @@ License: BSD-3-clause-Intel, see LICENSE.txt
 <polymer-element name="my-select-setting" attributes="label value">
   <template>
     <style>
-      ::content paper-radio-button {
-        display: block;
-      }
       #label {
         width: 100%;
       }
@@ -26,19 +23,16 @@ License: BSD-3-clause-Intel, see LICENSE.txt
       }
     </style>
 
-    <paper-dialog heading="{{ label }}"
-        transition="paper-dialog-transition-bottom"
-        id="dialog">
+    <paper-action-dialog heading="{{ label }}" id="dialog" transition="paper-dialog-transition-bottom">
 
-        <paper-radio-group selected="{{ value }}" vertical id="radioGroup">
-
+      <paper-radio-group layout selected="{{ value }}" vertical id="radioGroup">
         <content></content>
       </paper-radio-group>
 
       <paper-button dismissive>
         Cancel
       </paper-button>
-    </paper-dialog>
+    </paper-action-dialog>
 
     <paper-item vertical layout id="item">
       <div id="label">{{ label }}</div>
