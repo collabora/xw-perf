@@ -8,7 +8,6 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
 <link rel="import" href="bower_components/core-icon/core-icon.html" />
 <link rel="import" href="bower_components/core-icons/core-icons.html" />
 <link rel="import" href="bower_components/paper-button/paper-button.html" />
-<link rel="import" href="bower_components/paper-focusable/paper-focusable.html" />
 <polymer-element name="contacts-item" attributes="model favicon">
   <template>
     <style>
@@ -56,7 +55,7 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
         class="{{ { differentBackgrounds: g.differentBackgrounds } | tokenList }}"
         style="{{ (g.differentBackgrounds ? model.color : {}) | styleObject }}">
 
-    <paper-focusable layout horizontal center relative flex
+    <div layout horizontal center relative flex
         id="clickable" on-tap="{{ clickableTapped }}">
       <template if="{{ model.avatar}}">
         <div class="avatar" style="background-image: url(avatars/{{ model.avatar }});">
@@ -72,7 +71,7 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
       <div class="text" id="text">
         {{ model.name }}
       </div>
-    </paper-focusable>
+    </div>
 
     <template if="{{ favicon && model.favorite }}">
       <paper-icon-button icon="star" id="fave" on-tap="{{ toggleFavorite }}">
