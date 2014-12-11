@@ -48,8 +48,7 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
         </paper-toast>
 
         <core-drawer-panel id="drawerPanel">
-          <div drawer id="my-drawer" z=2>
-            <paper-shadow z="1"></paper-shadow>
+          <paper-shadow drawer id="my-drawer" z="2">
             <paper-item on-tap="{{ showUnimplementedToast }}">
               Options
             </paper-item>
@@ -76,7 +75,7 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
             <my-boolean-setting id="diffBackgroundCheck"
                 label="Rainbow backgrounds"
                 on-core-change="{{toggleDiffBackground}}">
-          </div>
+          </paper-shadow>
 
           <core-animated-pages main id="modePages" selected="0"
               transitions="cross-fade">

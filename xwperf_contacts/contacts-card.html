@@ -119,7 +119,7 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
           </template>
         </div>
 
-        <div id="controls">
+        <paper-shadow id="controls" z="{{ narrow ? 1 : 0 }}">
           <paper-input label="Name" floatingLabel type="text"
               value="{{model.name}}"></paper-input>
           <paper-input label="Email" floatingLabel type="email"
@@ -131,9 +131,7 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
             <span flex></span>
             <input type="date" id="birthday" value="{{model.birthday}}" />
           </p>
-
-          <paper-shadow z="{{ narrow ? 1 : 0 }}"></paper-shadow>
-        </div>
+        </paper-shadow>
       </div>
     </core-header-panel>
 
