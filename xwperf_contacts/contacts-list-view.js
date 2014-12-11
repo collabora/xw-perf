@@ -115,8 +115,8 @@ Polymer({
   ready: function() {
     performance.mark('mark_contacts_list_view_ready');
 
-    this.$.favoritesList.scrollTarget = this.$['my-header-panel'];
-    this.$.allList.scrollTarget = this.$['my-header-panel'];
+    this.$.favoritesList.scrollTarget = this.$['my-header-panel'].scroller;
+    this.$.allList.scrollTarget = this.$['my-header-panel'].scroller;
 
     var myTabs = this.$['my-tabs'];
     var myPages = this.$['my-pages'];
