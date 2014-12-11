@@ -58,6 +58,15 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
           .no-button {
             width: 40px;
           }
+          main, #activityPages, #activityMain, #myHeaderPanel, #myListSection {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+          }
           #my-list {
             /* not keeping up is less jarring if this matches the items */
             background-color: white;
@@ -66,12 +75,12 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
         <my-feed id="myFeed">
         </my-feed>
 
-        <main flex>
+        <main>
         <core-animated-pages id="activityPages" selected="0"
-            transitions="cross-fade" fit>
+            transitions="cross-fade">
 
           <section id="activityMain">
-            <core-header-panel id="my-header-panel" cross-fade>
+            <core-header-panel id="myHeaderPanel" cross-fade>
               <core-toolbar id="my-toolbar">
                 <div class="no-button"></div>
                 <div flex>Social</div>
@@ -90,7 +99,7 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
                 </paper-menu-button>
               </core-toolbar>
 
-              <section layout id="my-list-section">
+              <section layout id="myListSection">
                 <my-item-list id="my-list">
                   <template>
                     <my-item model="{{ model }}" index="{{ index }}">
@@ -133,7 +142,7 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
           ready: function() {
             var myList = this.$['my-list'];
             this.data = this.$.myFeed.data;
-            myList.scrollTarget = this.$['my-header-panel'];
+            myList.scrollTarget = this.$.myHeaderPanel.scroller;
             myList.feed = this.$.myFeed;
             // this should really be triggered by assigning the scroll target
             // but this will do...
