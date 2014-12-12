@@ -215,6 +215,7 @@ Polymer({
       // If we do this synchronously it seems to do relayout, which resets
       // the transform property and breaks our animations.
       this.$.allList.updateSize();
+      this.$.favoritesList._resetIndex(0);
       this.$.favoritesList.updateSize();
     }.bind(this));
   },

@@ -78,7 +78,8 @@ License: BSD-3-clause-Google and BSD-3-clause-Intel, see LICENSE.txt
           </paper-shadow>
 
           <core-animated-pages main id="modePages" selected="0"
-              transitions="cross-fade">
+              transitions="cross-fade"
+              on-core-animated-pages-transition-prepare="{{prepareModeSwitch}}">
 
             <section layout vertical>
               <contacts-list-view cross-fade id="listView"
