@@ -1,6 +1,6 @@
 [submodule "polymer"]
 	path = polymer
-	url = https://github.com/smcv/polymer-snapshot.git
+	url = https://github.com/collabora/polymer-snapshot.git
 [submodule "app-widgets"]
 	path = app-widgets
 	url = https://github.com/abarth/app-widgets

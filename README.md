@@ -9,7 +9,7 @@ two mobile application frameworks:
 * native Android apps using the Java language and Android's standard
   UI libraries
 
-See <https://github.com/smcv/xw-perf/wiki> for more information.
+See <https://github.com/collabora/xw-perf/wiki> for more information.
 
 ## Building
 
